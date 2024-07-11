@@ -30,7 +30,7 @@ const Login = () => {
 
     return (
         <Grid container rowSpacing={{ xs: 1, sm: 2, md: 3, lg: 4 }} >
-            <div className="flex-container">
+            <div className="flex-container" id='top'>
                 <div className="flex-item">
                     {visibleSuccess &&
                         (<Alert severity="success" variant="outlined" id="success" >
@@ -65,6 +65,22 @@ const Login = () => {
                     <Button variant="contained" color="primary" onClick={handleClick} >Entrar</Button>
                 </Grid>
             </Grid>
+
+            <div className="flex-container" id='bottom'>
+                <div className="flex-item">
+                    {visibleSuccess &&
+                        (<Alert severity="success" variant="outlined" id="success" >
+                            Login efetuado com sucesso!
+                        </Alert>)
+                    }
+
+                    {visibleError &&
+                        (<Alert severity="error" variant="outlined" id="error" >
+                            Preencha todos os campos!
+                        </Alert>)
+                    }
+                </div>
+            </div>
         </Grid>
     )
 };
